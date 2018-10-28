@@ -1,7 +1,12 @@
 html {
     font-size: 10px;
-    background: url("bckgd-image.jpg") bottom center;
+    background: url(../image/bckgd-image.jpg) bottom center;
     background-size: cover;
+  }
+
+  @font-face{
+    font-family: 'PlaylistScript';
+    src: url(../font/Playlist\ Script.otf);
   }
   
   body,html {
@@ -10,10 +15,28 @@ html {
     font-family: sans-serif;
   }
   
+  h1{
+    font-family: 'PlaylistScript';
+    margin: auto;
+    margin-top: 100px;
+    color: hotpink;
+    font-size: 120px;
+    text-align: center;
+  }
+
+  p{
+    font-family: 'Courier New', Courier, monospace;
+    margin: auto;
+    color: #ffc600;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+
   .keys {
     display: flex;
     flex: 1;
-    min-height: 100vh;
+    min-height: 45vh;
     align-items: center;
     justify-content: center;
   }

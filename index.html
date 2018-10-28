@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>Drum Kit</title>
 </head>
 
 <body>
+    <div>
+        <h1>Belle's Drum Kit</h1>
+    </div>
 
     <div class="keys" id="body-image">
 
@@ -53,26 +56,29 @@
         </div>
 
     </div>
+    <div>
+        <p>Press the keys on your keyboard to play their matching sound. <br> Have fun!</p>
+    </div>
 
-    <audio data-key="65" src="sounds/bd_909dwsd.wav"></audio>
-    <audio data-key="83" src="sounds/clp_tayo.wav"></audio>
-    <audio data-key="68" src="sounds/hat_mydustyhouse.wav"></audio>
-    <audio data-key="70" src="sounds/prc_bongorock.wav"></audio>
-    <audio data-key="71" src="sounds/ride_full.wav"></audio>
-    <audio data-key="72" src="sounds/tam_mrhat.wav"></audio>
-    <audio data-key="74" src="sounds/snr_mpc.wav"></audio>
-    <audio data-key="75" src="sounds/tom_summerdayze.wav"></audio>
+    <audio data-key="65" src="assets/sounds/bd_909dwsd.wav"></audio>
+    <audio data-key="83" src="assets/sounds/clp_tayo.wav"></audio>
+    <audio data-key="68" src="assets/sounds/hat_mydustyhouse.wav"></audio>
+    <audio data-key="70" src="assets/sounds/prc_bongorock.wav"></audio>
+    <audio data-key="71" src="assets/sounds/ride_full.wav"></audio>
+    <audio data-key="72" src="assets/sounds/tam_mrhat.wav"></audio>
+    <audio data-key="74" src="assets/sounds/snr_mpc.wav"></audio>
+    <audio data-key="75" src="assets/sounds/tom_summerdayze.wav"></audio>
 
     <script>
 
-        function playSound(e){
+        function playSound(e) {
 
             //Get the audio matching the keyCode
-            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);  
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
             //Get the key matching the keyCode
             const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);          // if(!audio) return;
             //If there is no matching audio then stop the function from running all together
-            if(!audio) return;
+            if (!audio) return;
             //Rewind the audio to the start
             audio.currentTime = 0;
             //Play the audio
@@ -83,25 +89,25 @@
 
         }
 
-        function removeTransition(e){
-            
+        function removeTransition(e) {
+
             // console.log(e);
             //Skip if it is not a transform
-            if(e.propertyName !== 'transform') return;
+            if (e.propertyName !== 'transform') return;
             // console.log(e.propertyName);
             // console.log("This is: " + this.classList);
             //Remove the class.playing from the key 
             this.classList.remove('playing');
 
         };
-        
+
         //Listen to ALL the keys
         const keys = document.querySelectorAll('.key');
         //Add eventListener 'transistionend', then when transition ends we will remove it
         keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-         //Listen to the window for pressed key
-         window.addEventListener("keydown", playSound);   
-    
+        //Listen to the window for pressed key
+        window.addEventListener("keydown", playSound);
+
     </script>
 
 
