@@ -63,6 +63,46 @@
     <audio data-key="74" src="sounds/snr_mpc.wav"></audio>
     <audio data-key="75" src="sounds/tom_summerdayze.wav"></audio>
 
+    <script>
+
+        function playSound(e){
+
+            //Get the audio matching the keyCode
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);  
+            //Get the key matching the keyCode
+            const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);          // if(!audio) return;
+            //If there is no matching audio then stop the function from running all together
+            if(!audio) return;
+            //Rewind the audio to the start
+            audio.currentTime = 0;
+            //Play the audio
+            audio.play();
+            // console.log(key);
+            //Add the class .playing to the key giving it a different css style
+            key.classList.add('playing');  // With JQuery==> key.addClass('playing')
+
+        }
+
+        function removeTransition(e){
+            
+            // console.log(e);
+            //Skip if it is not a transform
+            if(e.propertyName !== 'transform') return;
+            // console.log(e.propertyName);
+            // console.log("This is: " + this.classList);
+            //Remove the class.playing from the key 
+            this.classList.remove('playing');
+
+        };
+        
+        //Listen to ALL the keys
+        const keys = document.querySelectorAll('.key');
+        //Add eventListener 'transistionend', then when transition ends we will remove it
+        keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+         //Listen to the window for pressed key
+         window.addEventListener("keydown", playSound);   
+    
+    </script>
 
 
 </body>
