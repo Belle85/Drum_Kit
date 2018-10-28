@@ -8,7 +8,8 @@ Javascript Drum Kit plays sound associated with the key displayed on the screen 
 ### **#JavaScript30**
 30 Day Vanilla JS Coding Challenge : https://javascript30.com/
 
-Build 30 things in **30** days.
+Build 30 things in **30** days. 
+**NO** FRAMEWORKS x **NO** COMPILERS x **NO** LIBRAIRIES x **NO** BOILERPLATES
 
 **Starting date :** *10/28/2018*
 
