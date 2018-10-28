@@ -18,9 +18,9 @@ html {
   h1{
     font-family: 'PlaylistScript';
     margin: auto;
-    margin-top: 100px;
+    margin-top: 80px;
     color: hotpink;
-    font-size: 120px;
+    font-size: 110px;
     text-align: center;
   }
 
@@ -71,4 +71,15 @@ html {
     text-transform: uppercase;
     letter-spacing: .1rem;
     color: #ffc600;
+  }
+
+  footer{
+    margin-top: 25px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  a{
+    color:purple;
+    
   }
