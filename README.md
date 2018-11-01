@@ -15,7 +15,7 @@ Build 30 things in **30** days.
 **Starting date :** *10/28/2018*
 
 * **Day 1:** Drum Kit ~ https://github.com/Belle85/Drum_Kit
-* **Day 2:**
+* **Day 2:** JS Clock ~ https://github.com/Belle85/JS_Clock
 
 
 
